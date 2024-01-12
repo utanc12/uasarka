@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+<p class="judul">Selamat Datang</p>
+  <div class="logo-container">
+    <img src="../../assets/icon/unbin.png" alt="">
+  </div>
+  <form (ngSubmit)="login()" class="login-form">
+    <ion-item class="input-item">
+      <ion-input type="text" [(ngModel)]="username" name="username" placeholder="NPM" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Email" clearInput></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" class="login-button">Login</ion-button>
+  </form>
+  <div *ngIf="showErrorMessage" class="error-message">
+    Invalid NPM or email. Please try again.
+  </div>
+</ion-content>
